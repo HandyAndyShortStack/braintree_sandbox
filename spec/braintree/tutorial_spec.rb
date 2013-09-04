@@ -28,5 +28,16 @@ describe Braintree do
     expect(result.success?).to be_true
   end
 
+  it "can subscribe users to plans" do
+    
+    customer = Braintree::Customer.all.first
+    payment_method_token = customer.credit_cards[0].token
 
+    result = Braintree::Subscription.create(
+      :payment_method_token => payment_method_token,
+      :plan_id => "test_plan_1"
+    )
+
+    expect(result.success?).to be_true
+  end
 end
