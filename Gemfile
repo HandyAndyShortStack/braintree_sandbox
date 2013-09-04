@@ -16,6 +16,9 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'uuidtools'
+  gem 'hash_dealer'
 end
 
 gem 'jquery-rails'
